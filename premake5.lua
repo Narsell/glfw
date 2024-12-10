@@ -2,8 +2,8 @@ project "GLFW"
     kind "StaticLib"
     language "C"
 
-    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
-    objdir ("../Intermediates/" .. OutputDir .. "/%{prj.name}")
+    targetdir ("../../../Binaries/" .. OutputDir .. "/%{prj.name}")
+    objdir ("../../../Intermediates/" .. OutputDir .. "/%{prj.name}")
 
     files
     {
@@ -34,7 +34,7 @@ project "GLFW"
         pic "On"
 
         systemversion "latest"
-        staticruntime "On"
+        staticruntime "Off"
 
         files
         {
@@ -57,7 +57,7 @@ project "GLFW"
 
     filter "system:windows"
         systemversion "latest"
-        staticruntime "On"
+        staticruntime "Off"
 
         files
         {

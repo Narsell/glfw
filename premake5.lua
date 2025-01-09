@@ -1,6 +1,7 @@
 project "GLFW"
     kind "StaticLib"
     language "C"
+    staticruntime "On"
 
     targetdir ("../../../Binaries/" .. OutputDir .. "/%{prj.name}")
     objdir ("../../../Intermediates/" .. OutputDir .. "/%{prj.name}")
@@ -31,10 +32,8 @@ project "GLFW"
 
     }
     filter "system:linux"
-        pic "On"
-
         systemversion "latest"
-        staticruntime "Off"
+        pic "On"
 
         files
         {
@@ -57,7 +56,6 @@ project "GLFW"
 
     filter "system:windows"
         systemversion "latest"
-        staticruntime "Off"
 
         files
         {
@@ -88,3 +86,4 @@ project "GLFW"
     filter "configurations:Release"
         runtime "Release"
         optimize "On"
+        symbols "Off"
